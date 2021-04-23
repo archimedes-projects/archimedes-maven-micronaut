@@ -2,7 +2,7 @@
 
 The purpose of this module is to easily add [Micronaut](https://micronaut.io/) support to your **Maven Kotlin projects**.
 
-You can find a **complete example** of how ot use this parent pom in: [micronaut-java-parent-example](https://github.com/archimedes-projects/archimedes-maven-micronaut-examples/tree/main/micronaut-kotlin-parent-example)
+You can find a **complete example** of how ot use this parent pom in: [micronaut-kotlin-parent-example](https://github.com/archimedes-projects/archimedes-maven-micronaut-examples/tree/main/micronaut-kotlin-parent-example)
 
 If you want to add Micronaut support in your Maven Kotlin project, you need just to set this module as the parent of your project `pom.xml`.
 
