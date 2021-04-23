@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.micronaut</groupId>
+        <artifactId>micronaut-parent</artifactId>
+        <version>2.4.2</version>
+    </parent>
+
+    <groupId>io.archimedesfw.maven.micronaut</groupId>
+    <artifactId>micronaut-base-parent</artifactId>
+    <version>2.4.2</version>
+    <packaging>pom</packaging>
+
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>This project tries to be an effort to simplify your Maven pom.xml files when you are using Micronaut. 
+        You should not use this module directly, instead here you can find two flavors: 
+        one for Java and the other for Kotlin. Both of them are ready for production use, 
+        but if you don't want to use them directly in your pom.xml you simply can look like it as an example.
+    </description>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>alejandropg</id>
+            <name>Alejandro Pérez</name>
+        </developer>
+    </developers>
+
+    <properties>
+        <jdk.version>11</jdk.version>
+        <release.version>11</release.version>
+        <lombok.version>1.18.20</lombok.version>
+    </properties>
+
+    <modules>
+        <module>micronaut-java-parent</module>
+        <module>micronaut-kotlin-parent</module>
+    </modules>
+
+</project>
