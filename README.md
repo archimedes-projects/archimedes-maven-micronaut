@@ -13,5 +13,5 @@ Please refer to the `pom.xml` of this module to see these configurations.
 This is a Maven base module just to define some common defaults, so is preferred that you don not use it directly 
 and instead in your project you should use one of:
  
- - [micronaut-java-parent](https://github.com/autentia/micronaut-java-parent)
- - [micronaut-kotlin-parent](https://github.com/autentia/micronaut-kotlin-parent)
+ - [micronaut-java-parent](https://github.com/archimedes-projects/archimedes-maven-micronaut/tree/main/micronaut-java-parent)
+ - [micronaut-kotlin-parent](https://github.com/archimedes-projects/archimedes-maven-micronaut/tree/main/micronaut-kotlin-parent)
