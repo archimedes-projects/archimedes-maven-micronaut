@@ -20,6 +20,7 @@
         one for Java and the other for Kotlin. Both of them are ready for production use, 
         but if you don't want to use them directly in your pom.xml you simply can look like it as an example.
     </description>
+    <url>https://www.archimedesfw.io/</url>
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -27,6 +28,12 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+    <scm>
+        <connection>scm:git:git://github.com/archimedes-projects/archimedes-maven-micronaut.git</connection>
+        <developerConnection>scm:git:ssh://github.com:archimedes-projects/archimedes-maven-micronaut.git</developerConnection>
+        <tag>main</tag>
+        <url>https://github.com/archimedes-projects/archimedes-maven-micronaut</url>
+    </scm>
     <developers>
         <developer>
             <id>alejandropg</id>
