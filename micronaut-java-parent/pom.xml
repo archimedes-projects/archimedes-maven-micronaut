@@ -22,6 +22,10 @@
         </license>
     </licenses>
 
+    <properties>
+        <lombok.version>1.18.20</lombok.version>
+    </properties>
+
     <build>
         <pluginManagement>
             <plugins>
@@ -32,8 +36,8 @@
                     <configuration>
                         <annotationProcessorPaths>
                             <path>
-                                <!-- Lombok is not required to use Micronaut -->
-                                <!-- But if you want to use, it have to be declared before Micronaut to avoid conflicts -->
+                                <!-- Lombok is not required to use Micronaut, but if you want to use
+                                it have to be declared before Micronaut to avoid conflicts -->
                                 <groupId>org.projectlombok</groupId>
                                 <artifactId>lombok</artifactId>
                                 <version>${lombok.version}</version>

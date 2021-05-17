@@ -13,9 +13,7 @@
     <packaging>pom</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
-    <description>This module is to be used as the parent of a Kotlin application.
-        Also with this parent you can mix with Java source code.
-    </description>
+    <description>This module is to be used as the parent of a Kotlin only application.</description>
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -23,6 +21,10 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+
+    <modules>
+        <module>micronaut-kotlin-java-parent</module>
+    </modules>
 
     <properties>
         <kotlin.version>1.4.32</kotlin.version>
@@ -48,7 +50,8 @@
                 <version>${kotlin.version}</version>
                 <configuration>
                     <args>
-                        <arg>-Xemit-jvm-type-annotations</arg> <!-- https://kotlinlang.org/docs/reference/whatsnew14.html#type-annotations-in-the-jvm-bytecode -->
+                        <!-- https://kotlinlang.org/docs/reference/whatsnew14.html#type-annotations-in-the-jvm-bytecode -->
+                        <arg>-Xemit-jvm-type-annotations</arg>
                     </args>
                     <compilerPlugins>
                         <plugin>all-open</plugin>
@@ -74,7 +77,6 @@
                         <configuration>
                             <sourceDirs>
                                 <sourceDir>${project.basedir}/src/main/kotlin</sourceDir>
-                                <sourceDir>${project.basedir}/src/main/java</sourceDir>
                             </sourceDirs>
                             <annotationProcessorPaths>
                                 <path>
@@ -103,7 +105,6 @@
                         <configuration>
                             <sourceDirs>
                                 <sourceDir>${project.basedir}/src/main/kotlin</sourceDir>
-                                <sourceDir>${project.basedir}/src/main/java</sourceDir>
                             </sourceDirs>
                         </configuration>
                     </execution>
@@ -116,7 +117,6 @@
                         <configuration>
                             <sourceDirs>
                                 <sourceDir>${project.basedir}/src/test/kotlin</sourceDir>
-                                <sourceDir>${project.basedir}/src/test/java</sourceDir>
                             </sourceDirs>
                             <annotationProcessorPaths>
                                 <path>
@@ -145,7 +145,6 @@
                         <configuration>
                             <sourceDirs>
                                 <sourceDir>${project.basedir}/src/test/kotlin</sourceDir>
-                                <sourceDir>${project.basedir}/src/test/java</sourceDir>
                             </sourceDirs>
                         </configuration>
                     </execution>
@@ -158,13 +157,6 @@
                 <version>${maven-compiler-plugin.version}</version>
                 <configuration>
                     <annotationProcessorPaths>
-                        <path>
-                            <!-- Lombok is not required to use Micronaut -->
-                            <!-- But if you want to use, it have to be declared before Micronaut to avoid conflicts -->
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                            <version>${lombok.version}</version>
-                        </path>
                         <path>
                             <groupId>io.micronaut</groupId>
                             <artifactId>micronaut-inject-java</artifactId>
@@ -196,25 +188,6 @@
                         <goals>
                             <goal>compile</goal>
                         </goals>
-                        <configuration>
-                            <annotationProcessorPaths>
-                                <path>
-                                    <groupId>org.projectlombok</groupId>
-                                    <artifactId>lombok</artifactId>
-                                    <version>${lombok.version}</version>
-                                </path>
-                                <path>
-                                    <groupId>io.micronaut</groupId>
-                                    <artifactId>micronaut-inject-java</artifactId>
-                                    <version>${micronaut.version}</version>
-                                </path>
-                                <path>
-                                    <groupId>io.micronaut</groupId>
-                                    <artifactId>micronaut-validation</artifactId>
-                                    <version>${micronaut.version}</version>
-                                </path>
-                            </annotationProcessorPaths>
-                        </configuration>
                     </execution>
                     <execution>
                         <id>java-test-compile</id>
@@ -222,41 +195,11 @@
                         <goals>
                             <goal>testCompile</goal>
                         </goals>
-                        <configuration>
-                            <annotationProcessorPaths>
-                                <path>
-                                    <groupId>org.projectlombok</groupId>
-                                    <artifactId>lombok</artifactId>
-                                    <version>${lombok.version}</version>
-                                </path>
-                                <path>
-                                    <groupId>io.micronaut</groupId>
-                                    <artifactId>micronaut-inject-java</artifactId>
-                                    <version>${micronaut.version}</version>
-                                </path>
-                                <path>
-                                    <groupId>io.micronaut</groupId>
-                                    <artifactId>micronaut-validation</artifactId>
-                                    <version>${micronaut.version}</version>
-                                </path>
-                            </annotationProcessorPaths>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
     </build>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-                <scope>provided</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
         <dependency>
