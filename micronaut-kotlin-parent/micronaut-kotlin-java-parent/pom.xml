@@ -31,6 +31,7 @@
     <build>
         <plugins>
             <!-- This configuration allow you to mix Kotlin and Java code -->
+
             <!-- Remember that IntelliJ doesn't support kapt annotation processor, so if you use IntelliJ you -->
             <!-- have to invoke Maven to annotation processor take effect, for example to run integration tests -->
             <!-- You can see more documentation in: -->
@@ -43,47 +44,52 @@
 
                 <executions>
                     <execution>
-                        <id>kapt-compile</id>
+                        <id>kapt</id>
                         <goals>
                             <goal>kapt</goal>
                         </goals>
                         <configuration>
-                            <sourceDirs combine.children="append">
+                            <sourceDirs>
+                                <sourceDir>${project.basedir}/src/main/kotlin</sourceDir>
                                 <sourceDir>${project.basedir}/src/main/java</sourceDir>
                             </sourceDirs>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>kotlin-compile</id>
+                        <id>compile</id>
                         <goals>
                             <goal>compile</goal>
                         </goals>
                         <configuration>
-                            <sourceDirs combine.children="append">
+                            <sourceDirs>
+                                <sourceDir>${project.basedir}/src/main/kotlin</sourceDir>
                                 <sourceDir>${project.basedir}/src/main/java</sourceDir>
                             </sourceDirs>
                         </configuration>
                     </execution>
 
                     <execution>
-                        <id>kapt-test-compile</id>
+                        <id>test-kapt</id>
                         <goals>
                             <goal>test-kapt</goal>
                         </goals>
                         <configuration>
-                            <sourceDirs combine.children="append">
+                            <sourceDirs>
+                                <sourceDir>${project.basedir}/src/test/kotlin</sourceDir>
                                 <sourceDir>${project.basedir}/src/test/java</sourceDir>
                             </sourceDirs>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>kotlin-test-compile</id>
+                        <id>test-compile</id>
                         <goals>
                             <goal>test-compile</goal>
                         </goals>
                         <configuration>
-                            <sourceDirs combine.children="append">
+                            <sourceDirs>
+                                <sourceDir>${project.basedir}/src/test/kotlin</sourceDir>
                                 <sourceDir>${project.basedir}/src/test/java</sourceDir>
+                                <sourceDir>${project.basedir}/target/generated-sources/kapt/test</sourceDir>
                             </sourceDirs>
                         </configuration>
                     </execution>
@@ -93,8 +99,8 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
+                    <proc combine.self="override"></proc>
                     <annotationProcessorPaths combine.self="override">
                         <path>
                             <!-- Lombok is not required to use Micronaut, but if you want to use
@@ -112,11 +118,6 @@
                             <groupId>io.micronaut</groupId>
                             <artifactId>micronaut-validation</artifactId>
                             <version>${micronaut.version}</version>
-                        </path>
-                        <path>
-                            <groupId>io.micronaut.data</groupId>
-                            <artifactId>micronaut-data-processor</artifactId>
-                            <version>${micronaut.data.version}</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
