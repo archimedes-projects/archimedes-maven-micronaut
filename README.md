@@ -1,3 +1,7 @@
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Maven Central](https://img.shields.io/maven-central/v/io.archimedesfw.maven.micronaut/micronaut-base-parent.svg?label=Maven%20Central)](https://search.maven.org/search?q=io.archimedesfw.maven.micronaut)
+[![Java CI](https://github.com/archimedes-projects/archimedes-maven-micronaut/workflows/Java%20CI/badge.svg)](https://github.com/archimedes-projects/archimedes-maven-micronaut/actions)
+
 # Micronaut Maven base parent
 
 The purpose of this module is to easily add [Micronaut](https://micronaut.io/) support to your Maven projects. 
