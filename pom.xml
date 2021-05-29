@@ -14,10 +14,20 @@
     <version>2.5.5-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>micronaut-java-parent</module>
+        <module>micronaut-kotlin-parent</module>
+    </modules>
+
+    <properties>
+        <jdk.version>11</jdk.version>
+        <release.version>11</release.version>
+    </properties>
+
     <name>${project.groupId}:${project.artifactId}</name>
-    <description>This project tries to be an effort to simplify your Maven pom.xml files when you are using Micronaut. 
-        You should not use this module directly, instead here you can find two flavors: 
-        one for Java and the other for Kotlin. Both of them are ready for production use, 
+    <description>This project tries to be an effort to simplify your Maven pom.xml files when you are using Micronaut.
+        You should not use this module directly, instead here you can find two flavors:
+        one for Java and the other for Kotlin. Both of them are ready for production use,
         but if you don't want to use them directly in your pom.xml you simply can look like it as an example.
     </description>
     <url>https://www.archimedesfw.io/</url>
@@ -28,28 +38,18 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
-    <scm>
-        <connection>scm:git:git://github.com/archimedes-projects/archimedes-maven-micronaut.git</connection>
-        <developerConnection>scm:git:ssh://github.com:archimedes-projects/archimedes-maven-micronaut.git</developerConnection>
-        <tag>main</tag>
-        <url>https://github.com/archimedes-projects/archimedes-maven-micronaut</url>
-    </scm>
     <developers>
         <developer>
             <id>alejandropg</id>
             <name>Alejandro Pérez</name>
         </developer>
     </developers>
-
-    <properties>
-        <jdk.version>11</jdk.version>
-        <release.version>11</release.version>
-    </properties>
-
-    <modules>
-        <module>micronaut-java-parent</module>
-        <module>micronaut-kotlin-parent</module>
-    </modules>
+    <scm>
+        <connection>scm:git:git://github.com/archimedes-projects/archimedes-maven-micronaut.git</connection>
+        <developerConnection>scm:git:ssh://github.com:archimedes-projects/archimedes-maven-micronaut.git</developerConnection>
+        <tag>main</tag>
+        <url>https://github.com/archimedes-projects/archimedes-maven-micronaut</url>
+    </scm>
 
     <profiles>
         <profile>
@@ -91,4 +91,5 @@
             </build>
         </profile>
     </profiles>
+
 </project>
