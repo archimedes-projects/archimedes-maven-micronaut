@@ -20,7 +20,7 @@ If you want to add Micronaut support in your Maven Java project, you need just t
 
     <groupId>com.example</groupId>
     <artifactId>my-example</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
 
     ...
 ```
