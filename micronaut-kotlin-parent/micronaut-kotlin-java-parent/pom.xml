@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.archimedesfw.maven.micronaut</groupId>
         <artifactId>micronaut-kotlin-parent</artifactId>
-        <version>2.5.5-SNAPSHOT</version>
+        <version>3.0.0</version>
     </parent>
 
     <artifactId>micronaut-kotlin-java-parent</artifactId>
@@ -118,6 +118,11 @@
                             <artifactId>micronaut-validation</artifactId>
                             <version>${micronaut.version}</version>
                         </path>
+                        <annotationProcessorPath>
+                            <groupId>io.micronaut</groupId>
+                            <artifactId>micronaut-http-validation</artifactId>
+                            <version>${micronaut.version}</version>
+                        </annotationProcessorPath>
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
