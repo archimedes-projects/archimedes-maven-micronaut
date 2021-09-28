@@ -75,6 +75,11 @@
                             <artifactId>micronaut-http-validation</artifactId>
                             <version>${micronaut.version}</version>
                         </annotationProcessorPath>
+                        <annotationProcessorPath>
+                            <groupId>io.micronaut.data</groupId>
+                            <artifactId>micronaut-data-processor</artifactId>
+                            <version>${micronaut.data.version}</version>
+                        </annotationProcessorPath>
                     </annotationProcessorPaths>
                 </configuration>
 
