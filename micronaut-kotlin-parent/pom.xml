@@ -80,6 +80,11 @@
                             <artifactId>micronaut-data-processor</artifactId>
                             <version>${micronaut.data.version}</version>
                         </annotationProcessorPath>
+                        <annotationProcessorPath>
+                            <groupId>io.micronaut.security</groupId>
+                            <artifactId>micronaut-security-annotations</artifactId>
+                            <version>${micronaut.security.version}</version>
+                        </annotationProcessorPath>
                     </annotationProcessorPaths>
                 </configuration>
 
