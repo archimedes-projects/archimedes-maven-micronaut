@@ -24,7 +24,7 @@
         <release.version>11</release.version>
     </properties>
 
-    <name>${project.groupId}:${project.artifactId}</name>
+    <name>${project.artifactId}</name>
     <description>This project tries to be an effort to simplify your Maven pom.xml files when you are using Micronaut.
         You should not use this module directly, instead here you can find two flavors:
         one for Java and the other for Kotlin. Both of them are ready for production use,

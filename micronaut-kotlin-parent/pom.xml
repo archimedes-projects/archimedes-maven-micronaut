@@ -179,7 +179,7 @@
         </plugins>
     </build>
 
-    <name>${project.groupId}:${project.artifactId}</name>
+    <name>${project.artifactId}</name>
     <description>This module is to be used as the parent of a Kotlin only application.</description>
     <licenses>
         <license>
