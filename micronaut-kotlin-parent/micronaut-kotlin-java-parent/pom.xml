@@ -133,6 +133,11 @@
                             <artifactId>micronaut-security-annotations</artifactId>
                             <version>${micronaut.security.version}</version>
                         </path>
+                        <path>
+                            <groupId>io.micronaut.openapi</groupId>
+                            <artifactId>micronaut-openapi</artifactId>
+                            <version>${micronaut.openapi.version}</version>
+                        </path>
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
