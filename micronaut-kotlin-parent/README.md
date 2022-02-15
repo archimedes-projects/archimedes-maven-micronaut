@@ -15,7 +15,7 @@ If you want to add Micronaut support in your Maven Kotlin project, you need just
     <parent>
         <groupId>io.archimedesfw.maven.micronaut</groupId>
         <artifactId>micronaut-kotlin-parent</artifactId>
-        <version>3.2.6</version>
+        <version>3.3.2</version>
     </parent>
 
     <groupId>com.example</groupId>
