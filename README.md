@@ -20,3 +20,17 @@ and instead in your project you should use one of:
  - [micronaut-java-parent](https://github.com/archimedes-projects/archimedes-maven-micronaut/tree/main/micronaut-java-parent) - only Java project
  - [micronaut-kotlin-parent](https://github.com/archimedes-projects/archimedes-maven-micronaut/tree/main/micronaut-kotlin-parent) - only Kotlin project
  - [micronaut-kotlin-java-parent](https://github.com/archimedes-projects/archimedes-maven-micronaut/tree/main/micronaut-kotlin-parent/micronaut-kotlin-java-parent) - project that mix Java and Kotlin sources
+
+
+# JDK 17
+
+Because JDK 17 is the actual LTS version, since version 3.3.2 of this module JDK 17 is used by default.
+
+If you want to use another JDK version you can define it in your module `pom.xml` using the properties:
+
+```xml
+    <properties>
+        <jdk.version>11</jdk.version>
+        <release.version>11</release.version>
+    </properties>
+```
