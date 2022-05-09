@@ -6,12 +6,12 @@
     <parent>
         <groupId>io.micronaut</groupId>
         <artifactId>micronaut-parent</artifactId>
-        <version>3.4.0</version>
+        <version>3.4.3</version>
     </parent>
 
     <groupId>io.archimedesfw.maven.micronaut</groupId>
     <artifactId>micronaut-base-parent</artifactId>
-    <version>3.4.0</version>
+    <version>3.4.3</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -22,6 +22,10 @@
     <properties>
         <jdk.version>17</jdk.version>
         <release.version>17</release.version>
+
+        <!-- Since Micronaut 3.4.1, Micronaut uses version 2.22.3, but this version is not in Maven Central,
+             so we will use the previous version until this question will be closed with the Micronaut team. -->
+        <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
     </properties>
 
     <name>${project.artifactId}</name>
