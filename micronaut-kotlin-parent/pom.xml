@@ -63,12 +63,6 @@
                         <!-- https://kotlinlang.org/docs/reference/whatsnew14.html#type-annotations-in-the-jvm-bytecode -->
                         <arg>-Xemit-jvm-type-annotations</arg>
                     </args>
-                    <compilerPlugins>
-                        <plugin>all-open</plugin>
-                    </compilerPlugins>
-                    <pluginOptions>
-                        <option>all-open:annotation=io.micronaut.aop.Around</option>
-                    </pluginOptions>
 
                     <annotationProcessorPaths>
                         <annotationProcessorPaths>
@@ -103,14 +97,6 @@
                         </annotationProcessorPath>
                     </annotationProcessorPaths>
                 </configuration>
-
-                <dependencies>
-                    <dependency>
-                        <groupId>org.jetbrains.kotlin</groupId>
-                        <artifactId>kotlin-maven-allopen</artifactId>
-                        <version>${kotlin.version}</version>
-                    </dependency>
-                </dependencies>
 
                 <executions>
                     <execution>
