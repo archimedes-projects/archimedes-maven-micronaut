@@ -15,7 +15,7 @@ If you want to add Micronaut support in your Maven Java project, you need just t
     <parent>
         <groupId>io.archimedesfw.maven.micronaut</groupId>
         <artifactId>micronaut-java-parent</artifactId>
-        <version>3.7.4</version>
+        <version>3.8.7</version>
     </parent>
 
     <groupId>com.example</groupId>
