@@ -36,7 +36,7 @@ jobs:
         run: |
           ./mvnw -Pinternal-release-own-project deploy
           echo 'Now you have to wait for the packages to be published in Maven Central.'
-          echo 'You can check it in https://repo.maven.apache.org/maven2/io/archimedesfw/context/archimedes-context-micronaut/'
+          echo 'You can check it in https://repo.maven.apache.org/maven2/io/archimedesfw/maven/micronaut/micronaut-kotlin-parent/'
         env:
           GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
