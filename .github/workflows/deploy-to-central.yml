@@ -14,14 +14,14 @@ jobs:
       RELEASE_VERSION: ${{ env.RELEASE_VERSION }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.inputs.release_version }}
 
-      - uses: actions/setup-java@v3
+      - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
           cache: 'maven'
           server-id: ossrh
           server-username: OSSRH_USERNAME
