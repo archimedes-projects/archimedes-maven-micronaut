@@ -6,14 +6,14 @@
     <parent>
         <groupId>io.archimedesfw.maven.micronaut</groupId>
         <artifactId>micronaut-base-parent</artifactId>
-        <version>3.8.7</version>
+        <version>4.5.0</version>
     </parent>
 
     <artifactId>micronaut-java-parent</artifactId>
     <packaging>pom</packaging>
 
     <properties>
-        <lombok.version>1.18.26</lombok.version>
+        <lombok.version>1.18.34</lombok.version>
     </properties>
 
     <dependencyManagement>
@@ -43,20 +43,26 @@
                                 <artifactId>lombok</artifactId>
                                 <version>${lombok.version}</version>
                             </path>
+
                             <path>
                                 <groupId>io.micronaut</groupId>
                                 <artifactId>micronaut-inject-java</artifactId>
-                                <version>${micronaut.version}</version>
+                                <version>${micronaut.core.version}</version>
                             </path>
                             <path>
                                 <groupId>io.micronaut</groupId>
-                                <artifactId>micronaut-validation</artifactId>
-                                <version>${micronaut.version}</version>
+                                <artifactId>micronaut-graal</artifactId>
+                                <version>${micronaut.core.version}</version>
+                            </path>
+                            <path>
+                                <groupId>io.micronaut.validation</groupId>
+                                <artifactId>micronaut-validation-processor</artifactId>
+                                <version>${micronaut.validation.version}</version>
                             </path>
                             <path>
                                 <groupId>io.micronaut</groupId>
                                 <artifactId>micronaut-http-validation</artifactId>
-                                <version>${micronaut.version}</version>
+                                <version>${micronaut.core.version}</version>
                             </path>
                             <path>
                                 <groupId>io.micronaut.data</groupId>
@@ -67,6 +73,11 @@
                                 <groupId>io.micronaut.security</groupId>
                                 <artifactId>micronaut-security-annotations</artifactId>
                                 <version>${micronaut.security.version}</version>
+                            </path>
+                            <path>
+                                <groupId>io.micronaut.serde</groupId>
+                                <artifactId>micronaut-serde-processor</artifactId>
+                                <version>${micronaut.serialization.version}</version>
                             </path>
                             <path>
                                 <groupId>io.micronaut.openapi</groupId>

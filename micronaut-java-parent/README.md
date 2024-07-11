@@ -15,7 +15,7 @@ If you want to add Micronaut support in your Maven Java project, you need just t
     <parent>
         <groupId>io.archimedesfw.maven.micronaut</groupId>
         <artifactId>micronaut-java-parent</artifactId>
-        <version>3.8.7</version>
+        <version>4.5.0</version>
     </parent>
 
     <groupId>com.example</groupId>
@@ -25,7 +25,7 @@ If you want to add Micronaut support in your Maven Java project, you need just t
     ...
 ```
 
-As you can see in the example the version of this module correspond with the Micronaut version that you want to use.
+As you can see in the example, the version of this module corresponds with the Micronaut version that you want to use.
 
 ## Integration tests
 
@@ -60,31 +60,5 @@ This module preconfigure the [Lombok](https://projectlombok.org/) annotation pro
         </dependency>
         ...
     </dependencies>
-    ...
-```
-
-## Typical Micronaut plugins
-
-There are several Maven plugins that are usually used with Micronaut. If you want to use some already configured plugins you just need to activate it in your project `pom.xml`.
-
-For example to generate an auto-executable jar you can use:
-
-```xml
-    <properties>
-        ...
-        <exec.mainClass>com.example.Application</exec.mainClass>
-        ...
-    </properties>
-
-    <build>
-        <plugins>
-            ...
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-            </plugin>
-            ...
-        </plugins>
-    </build>
     ...
 ```

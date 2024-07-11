@@ -15,7 +15,7 @@ If you want to add Micronaut support in your Maven Kotlin project, you need just
     <parent>
         <groupId>io.archimedesfw.maven.micronaut</groupId>
         <artifactId>micronaut-kotlin-parent</artifactId>
-        <version>3.8.7</version>
+        <version>4.5.0</version>
     </parent>
 
     <groupId>com.example</groupId>
@@ -25,9 +25,8 @@ If you want to add Micronaut support in your Maven Kotlin project, you need just
     ...
 ```
 
-As you can see in the example the version of this module correspond with the Micronaut version that you want to use.
+As you can see in the example, the version of this module corresponds with the Micronaut version that you want to use.
 
-This module allow you to mix Kotlin and Java source files in the same Maven module, the firs one in `src/main/kotlin` and the other in `src/main/java` (and the equivalent `src/test/kotlin` and `src/test/java` for the test sources).
 
 ## Integration tests
 
@@ -41,49 +40,6 @@ If you want to run integration tests in your project you just need to activate d
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-            </plugin>
-            ...
-        </plugins>
-    </build>
-    ...
-```
-
-## Lombok
-
-This module preconfigure the [Lombok](https://projectlombok.org/) annotation processor to be compatible with micronaut, so if you want to use **Lombok in your Java sources** you just need to activate the library dependency in you project `pom.xml`.
-
-```xml
-    ...
-    <dependencies>
-        ...
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-        ...
-    </dependencies>
-    ...
-```
-
-## Typical Micronaut plugins
-
-There are several Maven plugins that are usually used with Micronaut. If you want to use some already configured plugins you just need to activate it in your project `pom.xml`.
-
-For example to generate an auto-executable jar you can use:
-
-```xml
-    <properties>
-        ...
-        <exec.mainClass>com.example.Application</exec.mainClass>
-        ...
-    </properties>
-
-    <build>
-        <plugins>
-            ...
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
             </plugin>
             ...
         </plugins>

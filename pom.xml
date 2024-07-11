@@ -4,14 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>io.micronaut</groupId>
+        <groupId>io.micronaut.platform</groupId>
         <artifactId>micronaut-parent</artifactId>
-        <version>3.8.7</version>
+        <version>4.5.0</version>
     </parent>
 
     <groupId>io.archimedesfw.maven.micronaut</groupId>
     <artifactId>micronaut-base-parent</artifactId>
-    <version>3.8.7</version>
+    <version>4.5.0</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -20,9 +20,43 @@
     </modules>
 
     <properties>
-        <jdk.version>17</jdk.version>
-        <release.version>17</release.version>
+        <jdk.version>21</jdk.version>
+        <release.version>21</release.version>
+
+<!--  You should define in your own project the following properties 👇👇👇: -->
+
+        <packaging>jar</packaging>
+        <micronaut.runtime>netty</micronaut.runtime>
+
+        <!-- ⭐️ It is recommended to enable TestResources in your project to facilitate
+                automatically starting the necessary test containers for integration tests. -->
+<!--        <micronaut.test.resources.enabled>false</micronaut.test.resources.enabled>-->
+
+        <!-- This enables Ahead-of-time (AOT) compilation.
+             AOT can speed up your bootstrap time, but use it with caution -->
+<!--        <micronaut.aot.enabled>false</micronaut.aot.enabled>-->
+<!--        <micronaut.aot.packageName>com.example.aot.generated</micronaut.aot.packageName>-->
+
+<!--        <exec.mainClass>com.example.Application</exec.mainClass>-->
+
     </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.micronaut.maven</groupId>
+                <artifactId>micronaut-maven-plugin</artifactId>
+                <configuration>
+                    <configFile>aot-${packaging}.properties</configFile>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
     <name>${project.artifactId}</name>
     <description>This project tries to be an effort to simplify your Maven pom.xml files when you are using Micronaut.
