@@ -24,10 +24,10 @@ jobs:
           java-version: '21'
           cache: 'maven'
           server-id: ossrh
-          server-username: ${{ secrets.OSSRH_USERNAME }}
-          server-password: ${{ secrets.OSSRH_PASSWORD }}
+          server-username: OSSRH_USERNAME
+          server-password: OSSRH_PASSWORD
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
-          gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
+          gpg-passphrase: GPG_PASSPHRASE
 
       - name: Build with Maven
         run: ./mvnw --batch-mode clean install
@@ -37,3 +37,7 @@ jobs:
           ./mvnw -Pinternal-release-own-project deploy
           echo 'Now you have to wait for the packages to be published in Maven Central.'
           echo 'You can check it in https://repo.maven.apache.org/maven2/io/archimedesfw/maven/micronaut/micronaut-kotlin-parent/'
+        env:
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
